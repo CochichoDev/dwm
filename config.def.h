@@ -1,11 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 6;        /* border pixel of windows */
-static const unsigned int gappx = 8;			/* gaps between windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int gappx = 6;			/* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad			= 6;
+static const int sidepad			= 6;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -13,24 +15,18 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const unsigned int baralpha 			= 0x95U;
+static const unsigned int baralpha 			= 0x66U;
 static const unsigned int borderalpha 		= OPAQUE;
-static const char col_pale_purple[]			= "#f9e8fb";
-static const char col_mauve[]				= "#debdf3";
-static const char col_lavander[]			= "#c088f7";
-static const char col_glaucous[]			= "#7083ea";
-static const char col_tropical_indigo[]		= "#8e77ec";
-static const char col_pink[] 				= "#c976ed";
-static const char col_penn_blue[]			= "#02225f";
-static const char col_penn_blue2[]			= "#0c103d";
-static const char col_rich_black[]			= "#07051b";
-static const char col_weird_blue[] 			= "#694AE6";
-static const char col_darker_pink[] 		= "#3c2241";
+static const char col_bg_sel[]		= "#6652C1";
+static const char col_bg_norm[]		= "#A599DD";
+static const char col_fg_sel[]		= "#D9D3F6";
+static const char col_fg_norm[]		= "#9D8EE3";
+static const char col_unfocused_bd[]	= "#B8ACF1";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_darker_pink, col_pink,  col_pink},
-	[SchemeSel]  = { col_gray4, col_tropical_indigo,  col_tropical_indigo},
+	[SchemeNorm] = { col_fg_norm, col_bg_norm,  col_unfocused_bd},
+	[SchemeSel]  = { col_fg_sel, col_bg_sel,  col_bg_sel},
 };
 
 static const unsigned int alphas[][3]      = {
@@ -94,7 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_x,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
