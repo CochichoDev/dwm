@@ -21,12 +21,13 @@ static const char col_bg_sel[]		= "#6652C1";
 static const char col_bg_norm[]		= "#A599DD";
 static const char col_fg_sel[]		= "#D9D3F6";
 static const char col_fg_norm[]		= "#9D8EE3";
-static const char col_unfocused_bd[]	= "#B8ACF1";
+static const char col_focused_bd[]	= "#f98cd4";
+static const char col_unfocused_bd[]	= "#6652C1";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_fg_norm, col_bg_norm,  col_unfocused_bd},
-	[SchemeSel]  = { col_fg_sel, col_bg_sel,  col_bg_sel},
+	[SchemeSel]  = { col_fg_sel, col_bg_sel,  col_focused_bd},
 };
 
 static const unsigned int alphas[][3]      = {
