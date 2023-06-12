@@ -10,25 +10,27 @@ static const int vertpad			= 6;
 static const int sidepad			= 6;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+//static const char col_gray1[]       = "#222222";
+//static const char col_gray2[]       = "#444444";
+//static const char col_gray3[]       = "#bbbbbb";
+//static const char col_gray4[]       = "#eeeeee";
+//static const char col_cyan[]        = "#005577";
 static const unsigned int baralpha 			= 0x66U;
 static const unsigned int borderalpha 		= OPAQUE;
-static const char col_bg_sel[]		= "#6652C1";
-static const char col_bg_norm[]		= "#A599DD";
-static const char col_fg_sel[]		= "#D9D3F6";
-static const char col_fg_norm[]		= "#9D8EE3";
-static const char col_focused_bd[]	= "#f98cd4";
-static const char col_unfocused_bd[]	= "#6652C1";
+//static const char col_bg_sel[]		= "#6652C1";
+//static const char col_bg_norm[]		= "#A599DD";
+//static const char col_fg_sel[]		= "#D9D3F6";
+//static const char col_fg_norm[]		= "#9D8EE3";
+//static const char col_focused_bd[]	= "#f98cd4";
+//static const char col_unfocused_bd[]	= "#6652C1";
+//
+//static const char *colors[][3]      = {
+//	/*               fg         bg         border   */
+//	[SchemeNorm] = { col_fg_norm, col_bg_norm,  col_unfocused_bd},
+//	[SchemeSel]  = { col_fg_sel, col_bg_sel,  col_focused_bd},
+//};
 
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg_norm, col_bg_norm,  col_unfocused_bd},
-	[SchemeSel]  = { col_fg_sel, col_bg_sel,  col_focused_bd},
-};
+#include "/home/cochicho/.cache/wal/colors-wal-dwm.h"
 
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -75,7 +77,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static char xoffset[] = "6";
+static char yoffset[] = "6";
+static char width[] = "1908";
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-x", xoffset, "-y", yoffset, "-z", width,"-fn", dmenufont, "-nb", norm_bg, "-nf", sel_border, "-sb", urg_bg, "-sf", sel_border, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
