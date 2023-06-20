@@ -82,6 +82,9 @@ static char yoffset[] = "6";
 static char width[] = "1908";
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-x", xoffset, "-y", yoffset, "-z", width,"-fn", dmenufont, "-nb", norm_bg, "-nf", sel_border, "-sb", urg_bg, "-sf", sel_border, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *volmutecmd[] = { "amixer", "sset", "Master", "toggle" };
+static const char *voldowncmd[] = { "amixer", "-M", "sset", "Master", "5%-" };
+static const char *volupcmd[] = { "amixer", "-M", "sset", "Master", "5%+" };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,6 +116,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_equal,  setgaps,		   {.i = 0  } },
 	/* Keybind for the launching the screenshot script */
 	{ 0,							XK_Print,  spawn,		   SHCMD("~/Scripts/screenshots.sh") },
+	/* Keybind for media hotkeys */
+	{ 0,							XK_VolMute,		spawn,			{.v = volmutecmd } },
+	{ 0,							XK_VolDown,		spawn,			{.v = voldowncmd } },
+	{ 0,							XK_VolUp,		spawn,			{.v = volupcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
