@@ -6,10 +6,14 @@ static const unsigned int gappx = 6;			/* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
+static const int ICONSIZE            = 16;      /* icon size */
+static const int ICONSPACING         = 5;       /* space between icon and title */
+
 static const int vertpad			= 6;
 static const int sidepad			= 6;
-static const char *fonts[]          = { "monospace:pixelsize=20:antialias=true:autohint=true", "Fira Mono:pixelsize=20:antialias=true:autohint=true", "Hack:pixelsize=20:antialias=true:autohint=true", "Noto Color Emoji:pixelsize=20:antialias=true:autohint=true"};
-static const char dmenufont[]       = "monospace:pixelsize=20:antialias=true:autohint=true";
+static const char *fonts[]          = { "monospace:pixelsize=25:antialias=true:autohint=true", "Font Awesome 6 Free Regular:pixelsize=20:antialias=true:autohint=true"};
+static const char dmenufont[]       = "monospace:pixelsize=25:antialias=true:autohint=true";
 //static const char col_gray1[]       = "#222222";
 //static const char col_gray2[]       = "#444444";
 //static const char col_gray3[]       = "#bbbbbb";

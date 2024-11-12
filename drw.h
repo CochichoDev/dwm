@@ -24,6 +24,7 @@ typedef struct {
 	unsigned int depth;
 	Colormap cmap;
 	Drawable drawable;
+	Picture picture;
 	GC gc;
 	Clr *scheme;
 	Fnt *fonts;
@@ -33,6 +34,7 @@ typedef struct {
 Drw *drw_create(Display *dpy, int screen, Window win, unsigned int w, unsigned int h, Visual *visual, unsigned int depth, Colormap cmap);
 void drw_resize(Drw *drw, unsigned int w, unsigned int h);
 void drw_free(Drw *drw);
+Picture drw_picture_create_resized(Drw *drw, char *src, unsigned int src_w, unsigned int src_h, unsigned int dst_w, unsigned int dst_h);
 
 /* Fnt abstraction */
 Fnt *drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount);
@@ -55,6 +57,7 @@ void drw_setscheme(Drw *drw, Clr *scm);
 
 /* Drawing functions */
 void drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert);
+void drw_pic(Drw *drw, int x, int y, unsigned int w, unsigned int h, Picture pic);
 int drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert);
 
 /* Map functions */
