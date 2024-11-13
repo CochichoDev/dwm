@@ -10,8 +10,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int ICONSIZE            = 16;      /* icon size */
 static const int ICONSPACING         = 5;       /* space between icon and title */
 
-static const int vertpad			= 6;
-static const int sidepad			= 12;
+static const int vertpad			= 8;
+static const int sidepad			= 16;
 static const char *fonts[]          = { "monospace:pixelsize=25:antialias=true:autohint=true", "Font Awesome 6 Free Regular:pixelsize=20:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:pixelsize=25:antialias=true:autohint=true";
 //static const char col_gray1[]       = "#222222";
